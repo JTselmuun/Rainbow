@@ -89,3 +89,10 @@ h2 {
   flex-wrap: wrap;
   gap: 10px;
 }
+.cover {
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+}
