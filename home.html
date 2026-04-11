@@ -1,47 +1,67 @@
 <!DOCTYPE html>
-<script>
-if (localStorage.getItem("loggedIn") !== "true") {
-  window.location.href = "login.html";
-}
-</script>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rainbow</title>
-  <div class="cover-section">
-  <img src="cover.png">
-  <h2>Start Reading</h2>
-</div>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
-<body>
-  <header class="site-header">
+<body class="home-page">
+  <header class="site-header compact-header">
     <h1>Rainbow</h1>
-    <p class="subtitle">A story by Your Name</p>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="chapter1.html">Start Reading</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="home.html">Home</a>
+      <a href="chapter1.html">Table of Contents</a>
+      <button class="logout-btn" type="button" onclick="logout()">Log out</button>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Welcome</h2>
-      <p>
-        Welcome to my online book. You can read the chapters here.
-      </p>
+  <main class="home-layout container-wide">
+    <section class="home-left">
+      <article class="panel hero">
+        <h2>Welcome</h2>
+        <p>
+          Welcome to my online book. Open the first page to see the table of contents, then continue to Chapter 1 on the next page.
+        </p>
+        <a class="start-reading-btn" href="chapter1.html">Start Reading</a>
+      </article>
     </section>
 
-    <section class="toc">
-      <h2>Table of Contents</h2>
-      <ul>
-        <li><a href="chapter1.html">Chapter 1: Beginning</a></li>
-        <li><a href="chapter2.html">Chapter 2: The Turning Point</a></li>
-      </ul>
+    <section class="home-cover-wrap" aria-label="Book cover">
+      <a id="coverLink" class="cover-link" href="chapter1.html" aria-label="Open table of contents">
+        <img class="home-cover" src="cover.png" alt="Rainbow book cover" />
+        <blockquote class="cover-quote">“Somewhere between rain and sunlight, a story begins.”</blockquote>
+      </a>
     </section>
   </main>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+
+    const coverLink = document.getElementById("coverLink");
+
+    coverLink?.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) {
+        window.location.href = coverLink.href;
+        return;
+      }
+
+      coverLink.classList.add("is-flipping");
+      window.setTimeout(() => {
+        window.location.href = coverLink.href;
+      }, 700);
+    });
+  </script>
 </body>
 </html>
