@@ -496,3 +496,10 @@ h2 {
 .start-reading-btn:hover {
   background: #92522f;
 }
+
+.back-cover-image {
+  width: min(100%, 520px);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  margin: 12px auto 0;
+}
