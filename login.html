@@ -1,71 +1,41 @@
 <!DOCTYPE html>
-<script>
-if (localStorage.getItem("loggedIn") !== "true") {
-  window.location.href = "login.html";
-}
-</script>
-<html>
+<html lang="en">
 <head>
-  <title>Enter Password</title>
-  <style>
-    body {
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial;
-      background: #f5f5f5;
-    }
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    input {
-      padding: 10px;
-      margin: 10px 0;
-      width: 200px;
-    }
-    button {
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Rainbow</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="auth-page">
+  <main class="auth-card" aria-labelledby="login-title">
+    <h2 id="login-title">Private Book Access</h2>
+    <p class="auth-subtitle">Sign in to open <em>Rainbow</em>.</p>
 
-<div class="box">
-  <h2>Private Book Access</h2>
+    <label class="auth-label" for="username">Username</label>
+    <input type="text" id="username" class="auth-input" placeholder="Username" autocomplete="username" />
 
-  <input type="text" id="username" placeholder="Username"><br>
-  <input type="password" id="password" placeholder="Password"><br>
+    <label class="auth-label" for="password">Password</label>
+    <input type="password" id="password" class="auth-input" placeholder="Password" autocomplete="current-password" />
 
-  <button onclick="login()">Enter</button>
+    <button class="auth-button" type="button" onclick="login()">Enter</button>
+    <p id="error" class="auth-error" role="alert"></p>
+  </main>
 
-  <p id="error" style="color:red;"></p>
-</div>
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
 
-<script>
-function login() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
+      const correctUser = "reader";
+      const correctPass = "1234";
 
-  // CHANGE THESE
-  const correctUser = "reader";
-  const correctPass = "1234";
-
-  if (user === correctUser && pass === correctPass) {
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "home.html";
-  } else {
-    document.getElementById("error").innerText = "Wrong ID or password";
-  }
-}
-</script>
-
+      if (user === correctUser && pass === correctPass) {
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "home.html";
+      } else {
+        document.getElementById("error").innerText = "Wrong ID or password";
+      }
+    }
+  </script>
 </body>
 </html>
