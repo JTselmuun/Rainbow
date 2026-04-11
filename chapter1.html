@@ -1,45 +1,32 @@
 <!DOCTYPE html>
-<script>
-if (localStorage.getItem("loggedIn") !== "true") {
-  window.location.href = "login.html";
-}
-</script>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapter 1 - My Book</title>
+  <title>Table of Contents - Rainbow</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>My Book Title</h1>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="chapter2.html">Next Chapter</a>
-    </nav>
-  </header>
+<body class="inner-page">
 
-  <main class="container chapter-page">
-    <h2>Chapter 1: Destiny</h2>
-
-    <p>
-      This is the first paragraph of your chapter.
-    </p>
-
-    <p>
-      This is the second paragraph. You can keep writing like this.
-    </p>
-
-    <p>
-      Add as many paragraphs as you want.
-    </p>
-
-    <div class="chapter-nav">
-      <a href="index.html">← Back to Home</a>
-      <a href="chapter2.html">Next Chapter →</a>
-    </div>
+  <main class="container page-stack">
+    <article class="chapter-page panel book-page">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="chapter2.html">Chapter 1 — Beginning</a></li>
+        <li><a href="chapter3.html">Chapter 2 — The Turning Point</a></li>
+      </ul>
+      <div class="chapter-nav">
+        <a href="home.html">← Back to Home</a>
+        <span class="page-number-inline" aria-label="Book page number">Page 1</span>
+        <a href="chapter2.html">Go to Chapter 1 →</a>
+      </div>
+    </article>
   </main>
+
 </body>
 </html>
