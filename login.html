@@ -7,21 +7,35 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="auth-page">
-  <main class="auth-card" aria-labelledby="login-title">
-    <h2 id="login-title">Private Book Access</h2>
-    <p class="auth-subtitle">Sign in to open <em>Rainbow</em>.</p>
+  <main class="auth-shell">
+    <section class="auth-brand" aria-hidden="true">
+      <p class="auth-kicker">Storybook Access</p>
+      <h1>Rainbow</h1>
+      <p class="auth-quote">Somewhere between rain and sunlight, a story begins.</p>
+    </section>
 
-    <label class="auth-label" for="username">Username</label>
-    <input type="text" id="username" class="auth-input" placeholder="Username" autocomplete="username" />
+    <section class="auth-card" aria-labelledby="login-title">
+      <h2 id="login-title">Welcome Back</h2>
+      <p class="auth-subtitle">Sign in to open <em>Rainbow</em> and continue the story.</p>
 
-    <label class="auth-label" for="password">Password</label>
-    <input type="password" id="password" class="auth-input" placeholder="Password" autocomplete="current-password" />
+      <label class="auth-label" for="username">Username</label>
+      <input type="text" id="username" class="auth-input" placeholder="Username" autocomplete="username" />
 
-    <button class="auth-button" type="button" onclick="login()">Enter</button>
-    <p id="error" class="auth-error" role="alert"></p>
+      <label class="auth-label" for="password">Password</label>
+      <input type="password" id="password" class="auth-input" placeholder="Password" autocomplete="current-password" />
+
+      <button class="auth-button" type="button" onclick="login()">Enter Book</button>
+      <p id="error" class="auth-error" role="alert"></p>
+    </section>
   </main>
 
   <script>
+    document.getElementById("password")?.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        login();
+      }
+    });
+
     function login() {
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
@@ -33,7 +47,7 @@
         localStorage.setItem("loggedIn", "true");
         window.location.href = "home.html";
       } else {
-        document.getElementById("error").innerText = "Wrong ID or password";
+        document.getElementById("error").innerText = "Wrong username or password.";
       }
     }
   </script>
