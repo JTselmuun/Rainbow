@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Back Cover - Rainbow</title>
+  <title>Title Page - Rainbow</title>
   <link rel="stylesheet" href="style.css" />
   <script>
     if (localStorage.getItem("loggedIn") !== "true") {
@@ -13,12 +13,17 @@
 </head>
 <body class="inner-page">
   <main class="container page-stack">
-    <article class="chapter-page panel book-page back-cover-page chapter-theme theme-rainbow-light">
-      <img class="back-cover-image" src="cover2.png" alt="Rainbow book back cover" />
+    <article class="chapter-page panel book-page title-page chapter-theme theme-rainbow-light">
+      <div class="title-page-content">
+        <p class="title-page-kicker">Title Page</p>
+        <h2>Rainbow</h2>
+        <p class="title-page-subtitle">A gentle story of color, hope, and chasing something beautiful.</p>
+        <p class="title-page-byline">Written for wonder</p>
+      </div>
       <div class="chapter-nav">
-        <a href="chapter8.html">&larr; Previous Page</a>
+        <a href="frontcover.html">&larr; Previous Page</a>
         <span class="page-number-inline" aria-hidden="true"></span>
-        <a href="home.html">Next Page &rarr;</a>
+        <a href="chapter1.html">Next Page &rarr;</a>
       </div>
     </article>
   </main>

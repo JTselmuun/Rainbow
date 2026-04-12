@@ -11,7 +11,7 @@
     }
   </script>
 </head>
-<body class="home-page">
+<body class="home-page" data-next="frontcover.html">
   <header class="site-header compact-header">
     <h1>Rainbow</h1>
     <nav class="nav" aria-label="Primary">
@@ -23,7 +23,7 @@
 
   <main class="home-layout container-wide">
     <section class="home-left">
-      <article class="panel hero">
+      <article class="panel hero chapter-theme theme-gold">
         <p class="hero-kicker">A story about wonder, weather, and becoming</p>
         <h2>Welcome</h2>
         <div class="hero-story">
@@ -47,8 +47,11 @@
 
     <section class="home-cover-wrap" aria-label="Book cover">
       <a id="coverLink" class="cover-link" href="frontcover.html" aria-label="Open front cover">
-        <img class="home-cover" src="cover.png" alt="Rainbow book cover" />
+        <div class="home-cover-frame">
+          <img class="home-cover" src="cover.png" alt="Rainbow book cover" />
+        </div>
         <blockquote class="cover-quote">"Somewhere between rain and sunlight, a story begins."</blockquote>
+        <p class="cover-prompt">Click the cover or press the right arrow key to begin.</p>
       </a>
     </section>
   </main>
@@ -76,5 +79,6 @@
       }, 700);
     });
   </script>
+  <script src="book-nav.js"></script>
 </body>
 </html>
