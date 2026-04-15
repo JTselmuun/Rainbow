@@ -15,8 +15,7 @@
     </section>
 
     <section class="auth-card" aria-labelledby="login-title">
-      <h2 id="login-title">Welcome Back</h2>
-      <p class="auth-subtitle">Sign in to open <em>Rainbow</em> and continue the story.</p>
+      <h2 id="login-title">Welcome</h2>
 
       <label class="auth-label" for="username">Username</label>
       <input type="text" id="username" class="auth-input" placeholder="Username" autocomplete="username" />
@@ -24,7 +23,7 @@
       <label class="auth-label" for="password">Password</label>
       <input type="password" id="password" class="auth-input" placeholder="Password" autocomplete="current-password" />
 
-      <button class="auth-button" type="button" onclick="login()">Enter Book</button>
+      <button class="auth-button" type="button" onclick="login()">Sign in</button>
       <p id="error" class="auth-error" role="alert"></p>
     </section>
   </main>
@@ -40,8 +39,8 @@
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
 
-      const correctUser = "reader";
-      const correctPass = "1234";
+      const correctUser = "FOODEX";
+      const correctPass = "20260312";
 
       if (user === correctUser && pass === correctPass) {
         localStorage.setItem("loggedIn", "true");

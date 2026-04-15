@@ -11,16 +11,7 @@
     }
   </script>
 </head>
-<body class="home-page" data-next="frontcover.html">
-  <header class="site-header compact-header">
-    <h1>Rainbow</h1>
-    <nav class="nav" aria-label="Primary">
-      <a href="home.html">Home</a>
-      <a href="chapter1.html">Table of Contents</a>
-      <button class="logout-btn" type="button" onclick="logout()">Log out</button>
-    </nav>
-  </header>
-
+<body class="home-page" data-prev="backcover.html" data-next="frontcover.html">
   <main class="home-layout container-wide">
     <section class="home-left">
       <article class="panel hero chapter-theme theme-gold">
@@ -29,19 +20,22 @@
         <div class="hero-story">
           <p>When J was little, he loved rainbows.</p>
           <p>
-            He liked how they only showed up when the sun and the rain met - like something special had to happen first.
+            He liked how they only appeared when the sun and the rain met, like something special had to happen first.
           </p>
           <p>
             Every time he saw one, he would start running toward it. He knew he couldn't reach it, but that didn't stop him.
           </p>
           <p>
-            He just kept going - running and running, until his legs got tired and his breath ran out.
+            He just kept going, running and running until his legs grew tired and his breath ran out.
           </p>
           <p>
-            And even then, he didn't feel sad. Because for a little while, he was chasing something beautiful.
+            And even then, he didn't feel sad, because for a little while, he was chasing something beautiful.
           </p>
         </div>
-        <a class="start-reading-btn" href="frontcover.html">Start Reading</a>
+        <div class="hero-actions">
+          <a class="start-reading-btn" href="frontcover.html">Start Reading</a>
+          <button class="logout-btn hero-logout-btn" type="button" onclick="logout()">Log out</button>
+        </div>
       </article>
     </section>
 
@@ -51,7 +45,6 @@
           <img class="home-cover" src="cover.png" alt="Rainbow book cover" />
         </div>
         <blockquote class="cover-quote">"Somewhere between rain and sunlight, a story begins."</blockquote>
-        <p class="cover-prompt">Click the cover or press the right arrow key to begin.</p>
       </a>
     </section>
   </main>
